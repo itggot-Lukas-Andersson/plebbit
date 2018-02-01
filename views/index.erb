@@ -1,15 +1,20 @@
 <header>
-<h1>Nya</h1>
-<h1>Top</h1>
-<h1>Alfabetisk</h1>
-</header
-<%posts.each do |i|%>
-	<div class="box">
-		<p id="id"><%= i[0]%></p>
-		<p id="date"><%= i[1]%></p>
-		<p id="likes"><%= i[2]%></p>
-		<p id="dislikes"><%= i[3]%></p>
-		<p id="title"><%= i[4]%></p>
-		<p id="desc"><%= i[5]%></p>
-	</div>
-<%end%>
+<a href="#"><h1>Nya</h1></a>
+<a href="#"><h1>Heta</h1></a>
+<a href="#"><h1>A-Z</h1></a>
+</header>
+<div class="content">
+	<%posts.each do |i|%>
+			<div onclick="window.location='view/' + <%= i[0]%>" class="box">
+				<div class="box1">
+					<p class="title"><%= i[4]%></p>
+					<p class="desc"><%= i[5]%></p>
+				</div>
+				<div class="likey">
+					<i class="material-icons">keyboard_arrow_up</i>
+					<p class="points"><%= i[2] - i[3]%></p>
+					<i class="material-icons">keyboard_arrow_down</i>
+				</div>
+			</div>
+	<%end%>
+</div>
